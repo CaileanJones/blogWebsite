@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="contentBox">
+  {% if blogData == "False" %}
+    <br/><br/><br/><h1 class="title"> 404 - No Blog Found with this ID </h1>
+  {% else %}
+
+  
+    <div class="headerCardContainer">
+      <img src="../static/uploads/{{blogData.imgLink}}" alt="HeaderImg">
+      <h1 class="heading">{{ blogData["title"] }}</h1>
+    </div>
+
+    <div class="article">
+      <div class="author">
+        <p>by {{ blogData["author"] }}</p>
+      </div>
+  
+      <div class="bodyText">
+        <pre>{{ blogData["content"] }}</pre>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

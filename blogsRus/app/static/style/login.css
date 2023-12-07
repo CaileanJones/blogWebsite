@@ -1,0 +1,214 @@
+.contentBox {
+    padding-top: 0.5%;
+    height: 1200px;
+}
+form {
+    width: 80%;
+    font-family: 'Jost', sans-serif;
+    font-size: 40px;
+    left: 10%;
+    position: relative;
+    display: inline;
+}
+form p {
+    width: 20%;
+    height: 40px;
+    font-size: 40px;
+    margin: 0px;
+}
+form input {
+    font-size: 23px;
+    border-bottom: 5px solid #276678;
+    border-radius: 4px;
+    width: 80%;
+}
+#username {
+    position: relative;
+    left: 100px;
+    width: 200px;
+    bottom: 41px;
+}
+#passwordText {
+    position: relative;
+    bottom: 30px;
+}
+#password {
+    position: relative;
+    bottom: 36px;
+    left: 100px;
+    width: 200px; 
+}
+.tagsSelect {
+    width: 32%;
+    height: 40px;
+    left: 40%;
+    position: relative;
+    padding: 10px;
+    display:table-row;
+    border-radius: 10px;
+    bottom: 40px;
+    
+}
+.tagsSelect option {
+    display:table-cell;
+}
+.submit {
+    z-index: 2;
+    position: relative;
+    padding-top: 5px;
+    bottom: 37px;
+    height: 40px;
+    width: 100px;
+    padding-left: 0px;
+    background-color: #276678;
+    border-radius: 10px;
+    color: white;
+}
+.blogCont {
+    position: relative;
+    left: 17%;
+}
+#makeAccount {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    position: relative;
+    left: 10%;
+}
+#makeAccount a{
+    text-decoration: none; 
+
+}
+
+div.blog {
+    position: relative;
+    margin: 2%;
+    margin-bottom: 0%;
+    float: left;
+    width: 30%;
+}
+
+div.blog:hover {
+    filter: contrast(60%) brightness(60%);
+}
+
+div.blog img {
+    width: 100%;
+    height: 22vh;
+    object-fit: cover;
+    border-radius: 11px;
+}
+
+.desc {
+    position: relative;
+    text-align: left;
+    left: 0.4vw;
+}
+
+.selectTagsList {
+    position: relative;
+    display: table;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-left: 0px
+}
+
+.tag {
+    display: inline;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.7vw;
+    background-color: #276678;
+    border: solid #276678;
+    color: white;
+    border-radius: 5px;
+    padding-right: 3px;
+    padding-left: 3px;
+    width: fit-content;
+}
+
+.desc h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1vw;
+    left: -4px;
+    bottom: 4px;
+}
+
+.desc h2 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.8vw;
+    bottom: 12px;
+    position: relative;
+}
+@media screen and (max-width: 700px) {
+    .blogCont {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+    div.blog {
+        width: 60%;
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+
+    .tag {
+        font-size: 1vw;
+    }
+
+    .desc h1 {
+        font-size: 1.6vw;
+    }
+
+    .desc h2 {
+        font-size: 1vw;
+        margin-bottom: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #backgroundBox {
+        width: 80%;
+        margin: 10%;
+    }
+    .tag {
+        font-size: 1.5vw;
+    }
+    .desc h1 {
+        font-size: 2vw;
+    }
+    .desc h2 {
+        font-size: 1.4vw;
+        margin-bottom: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #backgroundBox {
+        width: 100%;
+        border-radius: 0px;
+        margin: 0%;
+        margin-top: 0%;
+    }
+
+    .tag {
+        font-size: 2vw;
+    }
+
+    .desc h1 {
+        font-size: 3vw;
+    }
+
+    .desc h2 {
+        font-size: 1.8vw;
+        margin-bottom: 1.5vw;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    #boxContainer {
+        width: 60%;
+        padding-inline: 20%;
+    }
+}

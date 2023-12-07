@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="contentBox">
+
+  {% if current_user.is_authenticated %}
+    <p class="loggedIn">Currently logged in as {{ current_user.username }}</p>
+  {% endif %}
+
+  <h1>Search:</h1>
+
+  <form method="post" name="search">
+      {{ form.hidden_tag() }}
+      <p class="search">{{ form.query }}</p>
+      <select class="tagsSelect" name="tagsSelect" multiple>
+        <option value="0">Science</option>
+        <option value="1">Computing</option>
+        <option value="2">Educational</option>
+        <option value="3">AI</option>
+        <option value="4">Music</option>
+        <option value="5">Nature</option>
+        <option value="6">Engineering</option>
+      </select>
+      <input class="submit" type="submit" value="Search">
+  </form>
+
+
+  <h1>Featured:</h1>
+  <div class="blogCont">
+
+    {% for blog in featuredBlogs %}
+      <div class="blog">
+        <a href="blog={{blog.blogID}}">
+          <img src="../static/uploads/{{blog.imgLink}}" alt="Blog Image">
+        </a>
+        <div class="desc">
+          <ul class="selectTagsList">
+            {% for tag in blog.tagsList %}
+              <li class="tag">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          <h1>{{ blog.title }}</h1>
+          <h2>{{ blog.description }}</h2>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% if featuredBlogs|length == 0 %}
+      <br/><h2>No Featured Blogs at the Moment</h2>
+    {% endif %}
+  </div>
+
+
+
+</div>
+{% endblock %}

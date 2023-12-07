@@ -1,0 +1,47 @@
+<!Doctype HTML>
+<html>
+    <head>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400&family=Poppins:wght@100;300;600&display=swap"
+    rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../static/style/base.css">
+    <link rel="stylesheet" href={{stylesheet}}>
+
+
+    {% if title %}
+        <title>Blogs-R-Us - {{ title }}</title>
+    {% else %}
+        <title>Blogs-R-Us</title>
+    {% endif %}
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
+    </head>
+    <body>
+    
+      <img class="logo" src="../static/img/logo.png" alt="Blogs-R-Us">
+      
+        <nav class="nav">
+          <div class="nav-links">
+            <ul id="indexPgNav">
+              {% if current_user.is_authenticated %}
+                <li><a href="./">Home</a></li>
+                <li><a href="./create">Create</a></li>
+                <li><a href="./personal">Personal</a></li>
+                <li><a href="./logout">Logout</a></li>
+              {% else %}
+                <li><a href="./">Home</a></li>  
+                <li><a href="./create">Create</a></li>
+                <li><a href="./login">Login</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+
+      <div>
+        {% block content %}{% endblock %}
+      </div>
+
+    </body>
+  </html>

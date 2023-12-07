@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="contentBox">
+  <h1>Sign Up</h1>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="errorList">
+      {% for message in messages %}
+        <li class="error"> {{ message }} </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endwith %}
+
+<form method="post" name="signup">
+    {{ form.hidden_tag() }}
+    <p id="usernameText">Username:</p>
+    <p id="username">{{ form.username }}</p>
+    <p id="passwordText">Password:</p>
+    <p id="password">{{ form.password }}</p>
+    <p id="confirmText">Confirm:<p>
+    <p id="confirm">{{ form.confirm }}</p>
+    <p><input class="submit" type="submit" value="Sign Up"></p>
+</form>
+  
+</div>
+{% endblock %}

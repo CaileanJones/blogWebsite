@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="contentBox">
+  <h1>Add</h1>
+  <p id="tagline">Add an expence or revenu</p>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="errorList">
+      {% for message in messages %}
+        <li class="error"> {{ message }} </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endwith %}
+
+  <form method="post" name="add">
+      {{ form.hidden_tag() }}
+      <p id="dropdown">Type:  {{ form.costType }}<br></p>
+      <p>Name: {{ form.name }}<br></p>
+      <p>Amount (£): {{ form.amount(pattern="\d+(\.\d{0,2})?") }}</p>
+      <p><input type="submit" value="Add"></p>
+  </form>
+</div>
+{% endblock %}

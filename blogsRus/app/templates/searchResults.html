@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="contentBox">
+  <h1>Results</h1>
+    
+  {% if foundBlogs|length == 0 %}
+    <h2>No Blogs Match Your Query :(</h2>
+  {% else %}  
+    <div class="blogCont">
+      {% for blog in foundBlogs %}
+
+      <div class="blog">
+        <a href="blog={{blog.blogID}}">
+          <img src="../static/uploads/{{blog.imgLink}}" alt="Blog Image">
+        </a>
+        <div class="desc">
+          <ul class="selectTagsList">
+            {% for tag in blog.tagsList %}
+              <li class="tag">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          <div class="blogInfo">
+            <h1>{{ blog.title }}</h1>
+            <h2>{{ blog.description }}</h2>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  
+</div>
+{% endblock %}
